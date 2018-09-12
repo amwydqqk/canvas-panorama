@@ -23,6 +23,7 @@ export default {
       imgData: null, // image对象
       maxImg: 51, // 最大图片数
       imgFormat: '.png', // 图片格式
+      fileName: 'white-car/', // 文件名/
       images: [], // 图片数组
       clickDown: false, // 是否点击,点击后允许拖动事件
       clickX: 0, // 点击的坐标点 X
@@ -128,7 +129,7 @@ export default {
   created () {
     // 加载图片数组
     for (let i = 0; i < this.maxImg; i++) {
-      this.images.push(i >= 9 ? require('../assets/images/white-car/' + (i + 1) + this.imgFormat) : require('../assets/images/white-car/' + '0' + (i + 1) + this.imgFormat))
+      this.images.push(i >= 9 ? require('../assets/images/' + this.fileName + (i + 1) + this.imgFormat) : require('../assets/images/' + this.fileName + '0' + (i + 1) + this.imgFormat))
     }
   },
   mounted () {
