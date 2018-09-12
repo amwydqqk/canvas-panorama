@@ -33,7 +33,8 @@ export default {
       dx: 0, // 剪切放大图原点 x 坐标
       dy: 0, // 剪切放大图原点 y 坐标
       dWidth: 0, // 剪切放大图宽度
-      dHeight: 0 // 剪切放大图高度
+      dHeight: 0, // 剪切放大图高度
+      velocity: 1000 / 10 // 自动播放速度
     }
   },
   methods: {
@@ -80,7 +81,7 @@ export default {
           if (this.imgIndex >= this.maxImg) this.imgIndex = 1
           // 设置绘制速度
           this.rotateDrawImg(this.canvas, this.ctx, this.imgData, this.imgIndex - 1, this.dx, this.dy, this.dWidth, this.dHeight)
-        }, 1000 / 10)
+        }, this.velocity)
       }
     },
     // 暂停播放
